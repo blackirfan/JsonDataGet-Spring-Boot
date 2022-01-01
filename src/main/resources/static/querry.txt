@@ -1,0 +1,13 @@
+SELECT bio ->> 'text' as text FROM public.parents;
+
+SELECT bio ->> 'text' as text FROM public.parents
+where bio ->> 'text' like '%Childlern';
+
+SELECT bio ->> 'text' as text FROM public.parents
+where bio ->> 'text' = 'bad Childlern';
+
+
+SELECT children  FROM public.parents;
+
+
+select * from parents where "children" @> '[{"age": "12"}]'
